@@ -8,7 +8,7 @@ A compact pipeline to **identify diseases and treatments** in healthcare text us
 
 ---
 
-## ✨ What the project does
+## What the project does
 - Reconstructs sentences and labels from token-per-line files
 - Builds feature vectors per token (current + previous token features)
 - Trains a **CRF** model (c1=1.0, c2=0.01, max_iter=100)
@@ -17,14 +17,14 @@ A compact pipeline to **identify diseases and treatments** in healthcare text us
 
 ---
 
-## 📁 Data format
+## Data format
 - Input files contain **one word per line**; sentences are separated by **blank lines**.
 - Example inputs referenced in code:
   - `data.txt`, `train_label`, `test_sent`, `test_label`
 
 ---
 
-## 🧠 Key components
+## Key components
 - `extract_sentences_from_file(path)`: rebuilds sentences from word-per-line files
 - `extract_word_features(sentence, pos, pos_tags)`: token features
 - `extract_sentence_words_features(sentence)`: features list per sentence
@@ -34,7 +34,7 @@ A compact pipeline to **identify diseases and treatments** in healthcare text us
 
 ---
 
-## 📊 Results (from the script)
+## Results (from the script)
 - **F1-score** (weighted): **0.9145**
 - **Precision** (weighted): **0.9141**
 - **Recall / Accuracy**: **0.9205**
@@ -43,7 +43,7 @@ A compact pipeline to **identify diseases and treatments** in healthcare text us
 
 ---
 
-## 🛠 Requirements
+## Requirements
 - Python ≥ 3.8
 - `spaCy`, `sklearn-crfsuite`, `pandas`
 
@@ -55,7 +55,7 @@ python -m spacy download en_core_web_sm
 
 ---
 
-## ▶️ How to run
+## How to run
 1. Place input files (`data.txt`, `train_label`, `test_sent`, `test_label`) in the working directory.
 2. Run the script:
    - Preprocess data → build features
@@ -70,11 +70,12 @@ python -m spacy download en_core_web_sm
 
 ---
 
-## ⚠️ Notes
+## Notes
 - CRF hyperparameters (`c1=1.0`, `c2=0.01`) were selected by simple experimentation.
 - Features use **current** and **previous** token context; you can extend to next-token features.
 - This is a **proof-of-concept**; accuracy depends on data quality and label consistency.
 
+Maintainer: Gouri Karthik Gembali
 ---
 
 ## 📄 License
