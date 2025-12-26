@@ -76,7 +76,4 @@ python -m spacy download en_core_web_sm
 - This is a **proof-of-concept**; accuracy depends on data quality and label consistency.
 
 Maintainer: Gouri Karthik Gembali
----
 
-## 📄 License
-Educational use.
